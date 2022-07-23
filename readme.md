@@ -11,7 +11,7 @@ npm install deamtest-react --save
 ## Usage
 
 ``` react
-import Deamtest from '../deamtest-react';
+import Deamtest from 'deamtest-react';
 
 const deamAppId = process.env.DEAM_APPID
 const deamApiKey = process.env.DEAM_APIKEY
