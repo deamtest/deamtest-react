@@ -1,6 +1,6 @@
 /// <reference types="react" />
 interface DeamtestProps {
-    lang?: string;
+    lang?: 'en-US';
     appId: number;
     apiKey: string;
     onVerify: (token: string) => void;
