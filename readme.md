@@ -31,9 +31,9 @@ import * as express from 'express';
 import axios from 'axios';
 import * as crypto from 'crypto';
 
-const deamApiUrl = 'https://api.deamtest.com';
-const deamAppId = '**********';
-const deamApiKey = 'deamtest-*******************************************';
+const deamApiUrl    = 'https://api.deamtest.com';
+const deamAppId     = '**********';
+const deamApiKey    = 'deamtest-*******************************************';
 const deamApiSecret = '******************'
 
 const verifyCaptcha = async (captchaToken: string) => {
@@ -54,22 +54,22 @@ const verifyCaptcha = async (captchaToken: string) => {
     ]).toString('base64');
 
     const response = await axios.post(deamApiUrl, {
-      jsonrpc: "2.0", 
-      id:Math.round(Math.random()*1e6), 
-      method:'deam-verify', 
-      params:[deamAppId, data]
+      jsonrpc:  "2.0", 
+      id:       Math.round(Math.random() * 1e6), 
+      method:   'deam-verify', 
+      params:   [deamAppId, data]
     });
     if (response.data.error) return response.data.error;
     if (response.data.result) return response.data.result;
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 
 const router = express.Router();
 
-router.post("/",async (req:express.Request, res:express.Response) => {
-  const { captcha } = req.body as {captcha: string};
+router.post("/",async (req: express.Request, res: express.Response) => {
+  const {captcha} = req.body as {captcha: string};
   const captchaResult = await verifyCaptcha(captcha);
   if (captchaResult===true) {
     res.json({status: 'ok'});

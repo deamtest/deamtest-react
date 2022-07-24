@@ -1,6 +1,6 @@
 {
   "name": "deamtest-react",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "description": "A Deamtest component for React",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
