@@ -10,7 +10,7 @@ npm install deamtest-react --save
 
 ## Usage
 
-> frontend (ReactJS)
+### frontend (ReactJS)
 ``` js
 import Deamtest from 'deamtest-react';
 
@@ -25,7 +25,7 @@ export default () => {
 };
 ```
 
-> backend (NodeJs)
+### backend (NodeJs)
 ``` js
 import * as express from 'express';
 import axios from 'axios';
